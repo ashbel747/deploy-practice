@@ -1,3 +1,26 @@
+import dish1 from "../assets/dish-1.jpeg";
+import dish2 from "../assets/dish-2.jpeg";
+import dish3 from "../assets/dish-3.jpeg";
+import dish4 from "../assets/dish-4.jpeg";
+import dish5 from "../assets/dish-5.jpeg";
+import dish6 from "../assets/dish-6.jpeg";
+import dish7 from "../assets/dish-7.jpeg";
+import dish8 from "../assets/dish-8.jpeg";
+import dish9 from "../assets/dish-9.jpg";
+import dish10 from "../assets/dish-10.jpg";
+import dish11 from "../assets/dish-11.jpg";
+import dish12 from "../assets/egg-rolls.jpg";
+import dish13 from "../assets/Samosas.jpg";
+import dish14 from "../assets/pancakes.jpg";
+import dish15 from "../assets/orange-crush.jpg";
+import dish16 from "../assets/caramel-iced.jpg";
+import dish17 from "../assets/sangria.jpg";
+import dish18 from "../assets/pink-lemonade.jpg";
+import dish19 from "../assets/pilau.jpg";
+import dish20 from "../assets/mishikaki.jpg";
+import dish21 from "../assets/ugali-chicken.jpg";
+
+
 const dishes = [
   {
     id: 1,
@@ -6,7 +29,7 @@ const dishes = [
     type: "main",
     price: "KSH 700",
     description: "Spiced chicken stew simmered in berbere and onions Ethiopia's pride",
-    image: "../src/assets/dish-1.jpeg",
+    image: dish1,
   },
   {
     id: 2,
@@ -15,7 +38,7 @@ const dishes = [
     type: "main",
     price: "KSH 600",
     description: "Soft chapati paired with rich, slow cooked beef in a savoury gravy",
-    image: "../src/assets/dish-2.jpeg",
+    image: dish2,
   },
   {
     id: 3,
@@ -24,7 +47,7 @@ const dishes = [
     type: "main",
     price: "KSH 800",
     description: "A silky green soup made from jute leaves, perfect with swallow",
-    image: "../src/assets/dish-3.jpeg",
+    image: dish3,
   },
   {
     id: 4,
@@ -33,7 +56,7 @@ const dishes = [
     type: "main",
     price: "KSH 1500",
     description: "Spiced chicken stew simmered in berbere and onions Ethiopia's pride",
-    image: "../src/assets/dish-4.jpeg",
+    image: dish4,
   },
   {
     id: 5,
@@ -42,7 +65,7 @@ const dishes = [
     type: "main",
     price: "KSH 1200",
     description: "Aromatic rice layered with marinated meat, bursting with coastal spices",
-    image: "../src/assets/dish-5.jpeg",
+    image: dish5,
   },
   {
     id: 6,
@@ -51,7 +74,7 @@ const dishes = [
     type: "main",
     price: "KSH 900",
     description: "Boiled yam with creamy spinach stew and palm oil earthy and comforting",
-    image: "../src/assets/dish-6.jpeg",
+    image: dish6,
   },
   {
     id: 7,
@@ -60,7 +83,7 @@ const dishes = [
     type: "main",
     price: "KSH 800",
     description: "Hearty maize meal served with tender goat sauteed in herbs and spices",
-    image: "../src/assets/dish-7.jpeg",
+    image: dish7,
   },
   {
     id: 8,
@@ -69,7 +92,7 @@ const dishes = [
     type: "main",
     price: "KSH 1300",
     description: "Spicy beef stew rich in flavour, served with injera or flatbread",
-    image: "../src/assets/dish-8.jpeg",
+    image: dish8,
   },
   {
     id: 9,
@@ -78,7 +101,7 @@ const dishes = [
     type: "main",
     price: "KSH 700",
     description: "Slow-cooked banana curry, slimmered in a savory tomato and onion sauce",
-    image: "../src/assets/dish-9.jpg",
+    image: dish9,
   },
   {
     id: 10,
@@ -87,7 +110,7 @@ const dishes = [
     type: "main",
     price: "KSH 600",
     description: "Slow cooked red kidney beans seasoned with onions, garlic and tomatoes",
-    image: "../src/assets/dish-10.jpg",
+    image: dish10,
   },
   {
     id: 11,
@@ -96,7 +119,7 @@ const dishes = [
     type: "main",
     price: "KSH 700",
     description: "Fluffy rice simmered in rich coconut milk",
-    image: "../src/assets/dish-11.jpg",
+    image: dish11,
   },
   {
     id: 12,
@@ -105,7 +128,7 @@ const dishes = [
     type: "starters",
     price: "KSH 250",
     description: "Crispy goldenrolls stuffed with seasoned eggs and fresh veggies",
-    image: "../src/assets/egg-rolls.jpg",
+    image: dish12,
   },
   {
     id: 13,
@@ -114,7 +137,7 @@ const dishes = [
     type: "starters",
     price: "KSH 60",
     description: "Crispy pastry pockets filled with minced meat or veggies",
-    image: "../src/assets/Samosas.jpg",
+    image: dish13,
   },
   {
     id: 14,
@@ -123,7 +146,7 @@ const dishes = [
     type: "starters",
     price: "KSH 150",
     description: "Sweet pancakes paired with a cup of spiced tea",
-    image: "../src/assets/pancakes.jpg",
+    image: dish14,
   },
   {
     id: 15,
@@ -132,7 +155,7 @@ const dishes = [
     type: "drinks",
     price: "KSH 350",
     description: "Orange Crush",
-    image: "../src/assets/orange-crush.jpg",
+    image: dish15,
   },
   {
     id: 16,
@@ -141,7 +164,7 @@ const dishes = [
     type: "drinks",
     price: "KSH 600",
     description: "Caramel Coffee",
-    image: "../src/assets/caramel-iced.jpg",
+    image: dish16,
   },
   {
     id: 17,
@@ -150,7 +173,7 @@ const dishes = [
     type: "drinks",
     price: "KSH 900",
     description: "Sangria",
-    image: "../src/assets/sangria.jpg",
+    image: dish17,
   },
   {
     id: 18,
@@ -159,7 +182,7 @@ const dishes = [
     type: "drinks",
     price: "KSH 700",
     description: "Lemonade",
-    image: "../src/assets/pink-lemonade.jpg",
+    image: dish18,
   },
   {
     id: 19,
@@ -168,7 +191,7 @@ const dishes = [
     type: "main dishes",
     price: "KSH 800",
     description: "Fragnant spiced rice cooked with meat or vegetables",
-    image: "../src/assets/pilau.jpg",
+    image: dish19,
   },
   {
     id: 20,
@@ -177,7 +200,7 @@ const dishes = [
     type: "main dishes",
     price: "KSH 1000",
     description: "Juicy skewers of marinated beef, grilled to perfection",
-    image: "../src/assets/mishikaki.jpg",
+    image: dish20,
   },
   {
     id: 21,
@@ -186,7 +209,7 @@ const dishes = [
     type: "main dishes",
     price: "KSH 900",
     description: "Maize meal served with fried or roasted chicken",
-    image: "../src/assets/ugali-chicken.jpg",
+    image: dish21,
   },
 ];
 
