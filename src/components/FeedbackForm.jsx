@@ -37,7 +37,7 @@ export default function FeedbackForm() {
         {/* Form Card */}
         <form
           onSubmit={handleSubmit}
-          className="bg-orange-100 text-black dark:bg-gray-800 dark:text-white rounded-lg shadow-lg px-8 py-6"
+          className="bg-orange-100 text-black dark:bg-gray-900 dark:text-white rounded-lg shadow-lg px-8 py-6"
         >
           <div className="mb-4">
             <label className="block mb-1 font-semibold">Full Name:</label>
