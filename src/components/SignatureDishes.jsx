@@ -20,7 +20,7 @@ export default function SignatureDishes() {
   return (
     <section className="p-10 bg-orange-100 dark:bg-gray-800" id="dishes">
       <div class="flex justify-center">
-        <h2 class="bg-amber-600 dark:bg-gray-900 inline-block px-5 rounded-lg text-5xl font-italianno text-center mb-8">
+        <h2 className="bg-amber-600 dark:bg-gray-900 inline-block px-5 rounded-lg text-5xl font-italianno text-center mb-8">
           Our Signature Dishes
         </h2>
       </div>
