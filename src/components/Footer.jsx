@@ -27,7 +27,7 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="bg-orange-100 dark:bg-gray-800 dark:text-white text-black p-8 mt-12"
+      className="bg-orange-100 dark:bg-gray-800 dark:text-white text-black p-8"
     >
       <nav class="hidden md:flex space-x-6 mb-4">
         <button onClick={() => scrollToSection('hero')} className="hover:font-bold ">Home</button>

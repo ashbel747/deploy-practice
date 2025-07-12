@@ -49,13 +49,16 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  //Hamburger button
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
 
 
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-amber-600 shadow" : "bg-amber-600 shadow"} dark:bg-gray-800`}>
       <section className="max-w-4xl flex flex-wrap justify-between items-center">
         <img src={NavBarLogo} className="w-full h-auto mr-auto min-w-[150px] max-w-[293px]"></img>
-        <nav className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3 text-gray-800 dark:text-white">
+        <nav className="hidden md:flex max-w-7xl mx-auto justify-between items-center px-4 py-3 text-gray-800 dark:text-white">
             <ul className="md:flex gap-14 text-lg items-center">
               <button onClick={() => scrollToSection('hero')} className="cursor-pointer">
                 Home
@@ -95,13 +98,77 @@ export default function Navbar() {
               </button>
             </ul>
 
-            <button
-              onClick={toggleTheme}
-              className="px-3 py-1 rounded bg-none text-sm"
-            >
-              {darkMode ? <FaRegSun className='hover:text-orange-400'  /> : <FaRegMoon className='hover:text-white'  />}
-            </button>
           </nav>
+          <button
+            onClick={toggleTheme}
+            className="px-3 py-1 rounded bg-none text-sm"
+          >
+            {darkMode ? <FaRegSun className='hover:text-orange-400'  /> : <FaRegMoon className='hover:text-white'  />}
+          </button>
+
+          <div className="md:hidden mb-4 relative" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+              <button  
+                className="mb-2"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16" 
+                  />
+                </svg>
+              </button>
+
+              {isMobileMenuOpen && (
+                <ul className="absolute top-full right-0 mt-2 w-48 bg-amber-600 dark:bg-gray-800 shadow-lg rounded-md py-2 z-50">
+                    <li className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                      <button onClick={() => scrollToSection('hero')} className="cursor-pointer">
+                        Home
+                      </button>
+                    </li>
+                    <li className="relative">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setMenuDropdown(prev => !prev)
+                        }}
+                        className="cursor-pointer w-full text-left px-4 py-2"
+                      >
+                        Menu
+                      </button>
+
+                      {menuDropdown && (
+                        <ul className="absolute top-full left-0 mt-2 w-48 bg-amber-600 dark:bg-gray-800 shadow-lg rounded-md py-2 z-50">
+                          <li className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <Link to="/">Home</Link>
+                          </li>
+                          <li className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <Link to="/menu/starters">Starters</Link>
+                          </li>
+                          <li className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <Link to="/menu/main dishes">Main Dishes</Link>
+                          </li>
+                          <li className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <Link to="/menu/drinks">Drinks</Link>
+                          </li>
+                        </ul>
+                      )}
+                    </li>
+
+                    <li className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                      <button onClick={() => scrollToSection('story')} className="cursor-pointer">
+                        Our Story
+                      </button>
+                    </li>
+                    <li className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                      <button onClick={() => scrollToSection('dishes')} className="cursor-pointer">
+                        Signature Dishes
+                      </button>
+                    </li>
+                </ul>
+              )}
+            </div>
       </section>
       
     </header>
