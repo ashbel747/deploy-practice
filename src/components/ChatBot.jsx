@@ -17,7 +17,7 @@ const ChatBot = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("https://module-2-assessment-2.onrender.com", {
+      const response = await axios.post("https://module-assessment-1.onrender.com/chat", {
         message: input,
       });
 
