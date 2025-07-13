@@ -15,21 +15,21 @@ const handleSend = async () => {
   setMessages((prev) => [...prev, newUserMessage]);
   setInput("");
   setLoading(true);
+try {
+  const response = await axios.post("https://module-assessment-1.onrender.com/chat", {
+    message: input,
+  });
 
-  try {
-    const response = await axios.post("https://module-assessment-1.onrender.com/chat", {
-      message: input,
-    });
+  console.log("Raw response from backend:", response.data);
 
-    // Handle various backend response shapes
-    const raw = response.data;
-    const botReply =
-      typeof raw === "string"
-        ? raw
-        : raw.response || raw.reply || "I couldn't understand your message.";
+  const raw = response.data;
+  const botReply =
+    typeof raw === "string"
+      ? raw
+      : raw.response || raw.reply || "I couldn't understand your message.";
 
-    const botMessage = { type: "ai", content: botReply };
-    setMessages((prev) => [...prev, botMessage]);
+  const botMessage = { type: "ai", content: botReply };
+  setMessages((prev) => [...prev, botMessage]);
   } catch (err) {
     console.error("Error:", err);
     const errorMsg = {
