@@ -8,32 +8,35 @@ const ChatBot = () => {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleSend = async () => {
-    if (!input.trim()) return;
+const handleSend = async () => {
+  if (!input.trim()) return;
 
-    const newUserMessage = { type: "human", content: input };
-    setMessages([...messages, newUserMessage]);
-    setInput("");
-    setLoading(true);
+  const newUserMessage = { type: "human", content: input };
+  setMessages(prev => [...prev, newUserMessage]);
+  setInput("");
+  setLoading(true);
 
-    try {
-      const response = await axios.post("https://module-assessment-1.onrender.com/chat", {
-        message: input,
-      });
+  try {
+    const response = await axios.post("https://module-assessment-1.onrender.com/chat", {
+      message: input,
+    });
 
-      const botMessage = { type: "ai", content: response.data.response };
-      setMessages(prev => [...prev, botMessage]);
-    } catch (err) {
-      console.error("Error:", err);
-      const errorMsg = {
-        type: "ai",
-        content: "Sorry, I had trouble responding. Please try again.",
-      };
-      setMessages(prev => [...prev, errorMsg]);
-    } finally {
-      setLoading(false);
-    }
-  };
+    const botReply = response.data.response || response.data; // fallback in case backend sends plain text
+    const botMessage = { type: "ai", content: botReply };
+
+    setMessages(prev => [...prev, botMessage]);
+  } catch (err) {
+    console.error("Error:", err);
+    const errorMsg = {
+      type: "ai",
+      content: "Sorry, I had trouble responding. Please try again.",
+    };
+    setMessages(prev => [...prev, errorMsg]);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <div>
