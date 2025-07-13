@@ -12,7 +12,7 @@ const handleSend = async () => {
   if (!input.trim()) return;
 
   const newUserMessage = { type: "human", content: input };
-  setMessages(prev => [...prev, newUserMessage]);
+  setMessages((prev) => [...prev, newUserMessage]);
   setInput("");
   setLoading(true);
 
@@ -21,22 +21,27 @@ const handleSend = async () => {
       message: input,
     });
 
-    // Safe check for response structure
-    const botReply = response?.data?.response || "I couldn't understand your message.";
+    // Handle various backend response shapes
+    const raw = response.data;
+    const botReply =
+      typeof raw === "string"
+        ? raw
+        : raw.response || raw.reply || "I couldn't understand your message.";
 
     const botMessage = { type: "ai", content: botReply };
-    setMessages(prev => [...prev, botMessage]);
+    setMessages((prev) => [...prev, botMessage]);
   } catch (err) {
     console.error("Error:", err);
     const errorMsg = {
       type: "ai",
       content: "Sorry, I had trouble responding. Please try again.",
     };
-    setMessages(prev => [...prev, errorMsg]);
+    setMessages((prev) => [...prev, errorMsg]);
   } finally {
     setLoading(false);
   }
 };
+
 
 
 
