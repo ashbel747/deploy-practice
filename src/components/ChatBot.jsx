@@ -21,9 +21,10 @@ const handleSend = async () => {
       message: input,
     });
 
-    const botReply = response.data.response || response.data; // fallback in case backend sends plain text
-    const botMessage = { type: "ai", content: botReply };
+    // Safe check for response structure
+    const botReply = response?.data?.response || "I couldn't understand your message.";
 
+    const botMessage = { type: "ai", content: botReply };
     setMessages(prev => [...prev, botMessage]);
   } catch (err) {
     console.error("Error:", err);
@@ -36,6 +37,7 @@ const handleSend = async () => {
     setLoading(false);
   }
 };
+
 
 
   return (
