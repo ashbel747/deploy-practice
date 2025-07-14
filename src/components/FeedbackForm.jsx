@@ -26,6 +26,7 @@ export default function FeedbackForm() {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
+      id="feedback"
     >
       <div className="w-full max-w-lg">
          {/* Title */}
