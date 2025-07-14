@@ -91,7 +91,7 @@ try {
                 </div>
               ))}
 
-              {loading && <div className="text-gray-600 italic">Chef Kofi is typing...</div>}
+              {loading && <div className="text-gray-600 italic">Chef Kofi is typing<span className="animated-dots text-xl text-gray-600"></span></div>}
             </div>
 
             {/* Input Area */}
